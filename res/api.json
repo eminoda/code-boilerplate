@@ -1,0 +1,772 @@
+[
+  {
+    "name": "终端",
+    "desc": "终端使用",
+    "add_time": 1668414379,
+    "up_time": 1668415351,
+    "index": 0,
+    "list": [
+      {
+        "_id": 14749,
+        "method": "POST",
+        "catid": 5125,
+        "title": "获取终端绑定的UID",
+        "path": "/terminal/device/uid",
+        "project_id": 1577,
+        "res_body_type": "json",
+        "uid": 810,
+        "add_time": 1668414516,
+        "up_time": 1668579238,
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "res_body": "{\"type\":\"object\",\"title\":\"empty object\",\"properties\":{\"code\":{\"type\":\"integer\",\"description\":\"非0失败\"},\"msg\":{\"type\":\"string\",\"description\":\"响应结果表述\"},\"data\":{\"type\":\"object\",\"properties\":{\"uid\":{\"type\":\"string\",\"description\":\"加密用户uid\"}},\"required\":[\"uid\"]}},\"required\":[\"code\",\"msg\",\"data\"]}",
+        "req_body_other": "{\"type\":\"object\",\"title\":\"empty object\",\"properties\":{\"deviceSn\":{\"type\":\"string\",\"description\":\"设备SN\"},\"signText\":{\"type\":\"string\",\"description\":\"设备SN签名值 SM3withSM2 P1\"}},\"required\":[\"deviceSn\",\"signText\"]}",
+        "req_body_type": "json",
+        "tag": [],
+        "index": 0,
+        "api_opened": false,
+        "res_body_is_json_schema": true,
+        "req_body_form": [],
+        "req_body_is_json_schema": true,
+        "req_params": [],
+        "req_headers": [
+          {
+            "_id": "63747fa6bfa05a000199c670",
+            "value": "application/json",
+            "name": "Content-Type",
+            "required": "1"
+          }
+        ],
+        "req_query": [
+          {
+            "_id": "63747fa6bfa05a000199c66f",
+            "desc": "",
+            "name": "device_sn",
+            "required": "1"
+          }
+        ],
+        "query_path": {
+          "path": "/terminal/device/uid",
+          "params": []
+        },
+        "type": "static",
+        "status": "done",
+        "edit_uid": 0
+      },
+      {
+        "_id": 14750,
+        "method": "POST",
+        "catid": 5125,
+        "title": "更新终端绑定状态",
+        "path": "/terminal/device/bindStatus",
+        "project_id": 1577,
+        "res_body_type": "json",
+        "uid": 810,
+        "add_time": 1668414840,
+        "up_time": 1668579228,
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"title\":\"empty object\",\"properties\":{\"code\":{\"type\":\"integer\",\"description\":\"非0失败\"},\"msg\":{\"type\":\"string\",\"description\":\"响应结果表述\"}},\"required\":[\"code\",\"msg\"]}",
+        "req_body_other": "{\"type\":\"object\",\"title\":\"empty object\",\"properties\":{\"deviceSn\":{\"type\":\"string\",\"description\":\"设备SN\"},\"bindStatus\":{\"type\":\"string\",\"description\":\"绑定结果  0代表成功\"},\"signText\":{\"type\":\"string\",\"description\":\"设备SN签名值 SM3withSM2 P1\"}},\"required\":[\"deviceSn\",\"bindStatus\",\"signText\"]}",
+        "tag": [],
+        "index": 1,
+        "api_opened": false,
+        "res_body_is_json_schema": true,
+        "req_body_form": [],
+        "req_body_is_json_schema": true,
+        "req_params": [],
+        "req_headers": [
+          {
+            "_id": "63747f9dbfa05a000199c66e",
+            "value": "application/json",
+            "name": "Content-Type",
+            "required": "1"
+          }
+        ],
+        "req_query": [],
+        "query_path": {
+          "path": "/terminal/device/bindStatus",
+          "params": []
+        },
+        "type": "static",
+        "status": "done",
+        "edit_uid": 0
+      },
+      {
+        "_id": 14752,
+        "method": "GET",
+        "catid": 5125,
+        "title": "获取终端信息",
+        "path": "/terminal/device/info",
+        "project_id": 1577,
+        "res_body_type": "json",
+        "uid": 810,
+        "add_time": 1668415735,
+        "up_time": 1668579220,
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "res_body": "{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"number\"},\"msg\":{\"type\":\"string\"},\"data\":{\"type\":\"object\",\"properties\":{\"uid\":{\"type\":\"string\",\"description\":\"加密用户uid\"},\"deviceSn\":{\"type\":\"string\",\"description\":\"设备SN\"},\"bindStatus\":{\"type\":\"string\",\"description\":\"绑定状态 0未绑定 1已绑定\"},\"deviceStatus\":{\"type\":\"string\",\"description\":\"设备状态 \"}},\"required\":[\"uid\",\"bindStatus\",\"deviceSn\",\"deviceStatus\"]}},\"required\":[\"code\",\"msg\",\"data\"]}",
+        "tag": [],
+        "index": 2,
+        "api_opened": false,
+        "res_body_is_json_schema": true,
+        "req_body_form": [],
+        "req_body_is_json_schema": true,
+        "req_params": [],
+        "req_headers": [],
+        "req_query": [
+          {
+            "_id": "63747f94bfa05a000199c66d",
+            "desc": "设备SN",
+            "name": "deviceSn",
+            "required": "1"
+          }
+        ],
+        "query_path": {
+          "path": "/terminal/device/info",
+          "params": []
+        },
+        "type": "static",
+        "status": "done",
+        "edit_uid": 0
+      },
+      {
+        "_id": 14751,
+        "method": "GET",
+        "catid": 5125,
+        "title": "获取动态码",
+        "path": "/suishengma/dynamic",
+        "project_id": 1577,
+        "res_body_type": "json",
+        "uid": 810,
+        "add_time": 1668415653,
+        "up_time": 1668415653,
+        "__v": 0,
+        "tag": [],
+        "index": 3,
+        "api_opened": false,
+        "res_body_is_json_schema": false,
+        "req_body_form": [],
+        "req_body_is_json_schema": false,
+        "req_params": [],
+        "req_headers": [],
+        "req_query": [],
+        "query_path": {
+          "path": "/suishengma/dynamic",
+          "params": []
+        },
+        "type": "static",
+        "status": "undone",
+        "edit_uid": 0
+      },
+      {
+        "_id": 14753,
+        "method": "GET",
+        "catid": 5125,
+        "title": "获取离线码",
+        "path": "/suishengma/static",
+        "project_id": 1577,
+        "res_body_type": "json",
+        "uid": 810,
+        "add_time": 1668415931,
+        "up_time": 1668415931,
+        "__v": 0,
+        "tag": [],
+        "index": 4,
+        "api_opened": false,
+        "res_body_is_json_schema": false,
+        "req_body_form": [],
+        "req_body_is_json_schema": false,
+        "req_params": [],
+        "req_headers": [],
+        "req_query": [],
+        "query_path": {
+          "path": "/suishengma/static",
+          "params": []
+        },
+        "type": "static",
+        "status": "undone",
+        "edit_uid": 0
+      }
+    ]
+  },
+  {
+    "name": "后管",
+    "desc": null,
+    "add_time": 1668569540,
+    "up_time": 1668569540,
+    "index": 0,
+    "list": [
+      {
+        "_id": 14773,
+        "method": "GET",
+        "catid": 5137,
+        "title": "创建订单",
+        "path": "/system/order/add",
+        "project_id": 1577,
+        "res_body_type": "json",
+        "uid": 810,
+        "add_time": 1668583617,
+        "up_time": 1668583617,
+        "__v": 0,
+        "tag": [],
+        "index": 0,
+        "api_opened": false,
+        "res_body_is_json_schema": false,
+        "req_body_form": [],
+        "req_body_is_json_schema": false,
+        "req_params": [],
+        "req_headers": [],
+        "req_query": [],
+        "query_path": {
+          "path": "/system/order/add",
+          "params": []
+        },
+        "type": "static",
+        "status": "undone",
+        "edit_uid": 0
+      },
+      {
+        "_id": 14774,
+        "method": "GET",
+        "catid": 5137,
+        "title": "修改订单",
+        "path": "/system/order/modify",
+        "project_id": 1577,
+        "res_body_type": "json",
+        "uid": 810,
+        "add_time": 1668583690,
+        "up_time": 1668583690,
+        "__v": 0,
+        "tag": [],
+        "index": 1,
+        "api_opened": false,
+        "res_body_is_json_schema": false,
+        "req_body_form": [],
+        "req_body_is_json_schema": false,
+        "req_params": [],
+        "req_headers": [],
+        "req_query": [],
+        "query_path": {
+          "path": "/system/order/modify",
+          "params": []
+        },
+        "type": "static",
+        "status": "undone",
+        "edit_uid": 0
+      },
+      {
+        "_id": 14776,
+        "method": "GET",
+        "catid": 5137,
+        "title": "删除订单",
+        "path": "/system/order/delete",
+        "project_id": 1577,
+        "res_body_type": "json",
+        "uid": 810,
+        "add_time": 1668583898,
+        "up_time": 1668583898,
+        "__v": 0,
+        "tag": [],
+        "index": 2,
+        "api_opened": false,
+        "res_body_is_json_schema": false,
+        "req_body_form": [],
+        "req_body_is_json_schema": false,
+        "req_params": [],
+        "req_headers": [],
+        "req_query": [],
+        "query_path": {
+          "path": "/system/order/delete",
+          "params": []
+        },
+        "type": "static",
+        "status": "undone",
+        "edit_uid": 0
+      },
+      {
+        "_id": 14775,
+        "method": "POST",
+        "catid": 5137,
+        "title": "查询订单列表",
+        "path": "/system/order/list",
+        "project_id": 1577,
+        "res_body_type": "json",
+        "uid": 810,
+        "add_time": 1668583875,
+        "up_time": 1668583875,
+        "__v": 0,
+        "tag": [],
+        "index": 3,
+        "api_opened": false,
+        "res_body_is_json_schema": false,
+        "req_body_form": [],
+        "req_body_is_json_schema": false,
+        "req_params": [],
+        "req_headers": [],
+        "req_query": [],
+        "query_path": {
+          "path": "/system/order/list",
+          "params": []
+        },
+        "type": "static",
+        "status": "undone",
+        "edit_uid": 0
+      },
+      {
+        "_id": 14770,
+        "method": "POST",
+        "catid": 5137,
+        "title": "客户新增",
+        "path": "/system/customer",
+        "project_id": 1577,
+        "res_body_type": "json",
+        "uid": 842,
+        "add_time": 1668583262,
+        "up_time": 1668583962,
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"title\":\"empty object\",\"properties\":{\"code\":{\"type\":\"integer\",\"description\":\"响应码\"},\"msg\":{\"type\":\"string\",\"description\":\"响应信息\"},\"data\":{\"type\":\"object\",\"properties\":{\"customerId\":{\"type\":\"integer\",\"description\":\"客户Id\"}},\"required\":[\"customerId\"]}},\"required\":[\"code\",\"msg\",\"data\"]}",
+        "req_body_other": "{\"type\":\"object\",\"title\":\"empty object\",\"properties\":{\"name\":{\"type\":\"string\",\"description\":\"姓名\"},\"idNo\":{\"type\":\"string\",\"description\":\"身份证号\"},\"phone\":{\"type\":\"string\",\"description\":\"电话\"},\"address\":{\"type\":\"string\",\"description\":\"地址\"}},\"required\":[\"name\",\"idNo\",\"phone\",\"address\"]}",
+        "tag": [],
+        "index": 4,
+        "api_opened": false,
+        "res_body_is_json_schema": true,
+        "req_body_form": [],
+        "req_body_is_json_schema": true,
+        "req_params": [],
+        "req_headers": [
+          {
+            "_id": "6374921abfa05a000199c679",
+            "value": "application/json",
+            "name": "Content-Type",
+            "required": "1"
+          }
+        ],
+        "req_query": [],
+        "query_path": {
+          "path": "/system/customer",
+          "params": []
+        },
+        "type": "static",
+        "status": "undone",
+        "edit_uid": 0
+      },
+      {
+        "_id": 14777,
+        "method": "DELETE",
+        "catid": 5137,
+        "title": "客户删除",
+        "path": "/system/customer/{id}",
+        "project_id": 1577,
+        "res_body_type": "json",
+        "uid": 842,
+        "add_time": 1668585457,
+        "up_time": 1668585787,
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\"type\":\"object\",\"title\":\"empty object\",\"properties\":{\"code\":{\"type\":\"integer\",\"description\":\"响应码\"},\"msg\":{\"type\":\"string\",\"description\":\"响应信息\"}},\"required\":[\"code\",\"msg\"]}",
+        "tag": [],
+        "index": 5,
+        "api_opened": false,
+        "res_body_is_json_schema": true,
+        "req_body_form": [],
+        "req_body_is_json_schema": true,
+        "req_params": [
+          {
+            "_id": "6374993bbfa05a000199c68e",
+            "desc": "客户Id",
+            "name": "id"
+          }
+        ],
+        "req_headers": [
+          {
+            "_id": "6374993bbfa05a000199c68f",
+            "value": "application/x-www-form-urlencoded",
+            "name": "Content-Type",
+            "required": "1"
+          }
+        ],
+        "req_query": [],
+        "query_path": {
+          "path": "/system/customer/{id}",
+          "params": []
+        },
+        "type": "var",
+        "status": "undone",
+        "edit_uid": 0
+      },
+      {
+        "_id": 14772,
+        "method": "PUT",
+        "catid": 5137,
+        "title": "客户更新",
+        "path": "/system/customer",
+        "project_id": 1577,
+        "res_body_type": "json",
+        "uid": 842,
+        "add_time": 1668583307,
+        "up_time": 1668586178,
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_other": "{\"type\":\"object\",\"title\":\"empty object\",\"properties\":{\"customerId\":{\"type\":\"integer\",\"description\":\"客户Id\"},\"name\":{\"type\":\"string\",\"description\":\"姓名\"},\"idNo\":{\"type\":\"string\",\"description\":\"身份证号\"},\"phone\":{\"type\":\"string\",\"description\":\"电话\"},\"address\":{\"type\":\"string\",\"description\":\"地址\"}},\"required\":[\"customerId\",\"name\",\"idNo\",\"phone\",\"address\"]}",
+        "req_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"title\":\"empty object\",\"properties\":{\"code\":{\"type\":\"integer\",\"description\":\"响应码\"},\"msg\":{\"type\":\"string\",\"description\":\"响应信息\"}},\"required\":[\"code\",\"msg\"]}",
+        "tag": [],
+        "index": 6,
+        "api_opened": false,
+        "res_body_is_json_schema": true,
+        "req_body_form": [],
+        "req_body_is_json_schema": true,
+        "req_params": [],
+        "req_headers": [
+          {
+            "_id": "63749ac2bfa05a000199c6ab",
+            "value": "application/json",
+            "name": "Content-Type",
+            "required": "1"
+          }
+        ],
+        "req_query": [],
+        "query_path": {
+          "path": "/system/customer",
+          "params": []
+        },
+        "type": "static",
+        "status": "undone",
+        "edit_uid": 0
+      },
+      {
+        "_id": 14768,
+        "method": "GET",
+        "catid": 5137,
+        "title": "客户详情",
+        "path": "/system/customer/{id}",
+        "project_id": 1577,
+        "res_body_type": "json",
+        "uid": 842,
+        "add_time": 1668583241,
+        "up_time": 1668585684,
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "res_body": "{\"type\":\"object\",\"title\":\"empty object\",\"properties\":{\"code\":{\"type\":\"integer\",\"description\":\"响应码\"},\"msg\":{\"type\":\"string\",\"description\":\"响应信息\"},\"data\":{\"type\":\"object\",\"properties\":{\"customerId\":{\"type\":\"integer\",\"description\":\"客户Id\"},\"name\":{\"type\":\"string\",\"description\":\"姓名\"},\"idNo\":{\"type\":\"string\",\"description\":\"身份证号\"},\"phone\":{\"type\":\"string\",\"description\":\"电话\"},\"address\":{\"type\":\"string\",\"description\":\"地址\"}},\"required\":[\"customerId\",\"name\",\"idNo\",\"phone\",\"address\"]}},\"required\":[\"code\",\"msg\",\"data\"]}",
+        "tag": [],
+        "index": 7,
+        "api_opened": false,
+        "res_body_is_json_schema": true,
+        "req_body_form": [],
+        "req_body_is_json_schema": true,
+        "req_params": [
+          {
+            "_id": "637498d4bfa05a000199c686",
+            "desc": "客户Id",
+            "name": "id"
+          }
+        ],
+        "req_headers": [],
+        "req_query": [],
+        "query_path": {
+          "path": "/system/customer/{id}",
+          "params": []
+        },
+        "type": "var",
+        "status": "undone",
+        "edit_uid": 0
+      },
+      {
+        "_id": 14766,
+        "method": "GET",
+        "catid": 5137,
+        "title": "客户列表",
+        "path": "/system/customer/list",
+        "project_id": 1577,
+        "res_body_type": "json",
+        "uid": 842,
+        "add_time": 1668583224,
+        "up_time": 1668586757,
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "res_body": "{\"type\":\"object\",\"title\":\"empty object\",\"properties\":{\"code\":{\"type\":\"integer\",\"description\":\"响应码\"},\"msg\":{\"type\":\"string\",\"description\":\"响应信息\"},\"data\":{\"type\":\"object\",\"properties\":{\"total\":{\"type\":\"integer\",\"description\":\"总记录数\"},\"pageNum\":{\"type\":\"integer\",\"description\":\"当前页码\"},\"pageSize\":{\"type\":\"integer\",\"description\":\"每页记录数\"},\"rows\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"customerId\":{\"type\":\"integer\",\"description\":\"客户Id\"},\"name\":{\"type\":\"string\",\"description\":\"姓名\"},\"idNo\":{\"type\":\"string\",\"description\":\"身份证号\"},\"phone\":{\"type\":\"string\",\"description\":\"电话\"},\"address\":{\"type\":\"string\",\"description\":\"地址\"}},\"required\":[\"customerId\",\"name\",\"idNo\",\"phone\",\"address\"]}}},\"required\":[\"total\",\"pageNum\",\"pageSize\",\"rows\"],\"description\":\"记录列表\"}},\"required\":[\"code\",\"msg\",\"data\"]}",
+        "tag": [],
+        "index": 8,
+        "api_opened": false,
+        "res_body_is_json_schema": true,
+        "req_body_form": [],
+        "req_body_is_json_schema": true,
+        "req_params": [],
+        "req_headers": [],
+        "req_query": [
+          {
+            "_id": "63749d05bfa05a000199c6b1",
+            "desc": "当前页码 若不传则系统需指定默认值",
+            "example": "1",
+            "name": "pageNum",
+            "required": "0"
+          },
+          {
+            "_id": "63749d05bfa05a000199c6b0",
+            "desc": "每页记录条数 若不传则系统需指定默认值",
+            "example": "10",
+            "name": "pageSize",
+            "required": "0"
+          },
+          {
+            "_id": "63749d05bfa05a000199c6af",
+            "desc": "姓名",
+            "example": "",
+            "name": "name",
+            "required": "0"
+          },
+          {
+            "_id": "63749d05bfa05a000199c6ae",
+            "desc": "身份证号",
+            "example": "",
+            "name": "idNo",
+            "required": "0"
+          },
+          {
+            "_id": "63749d05bfa05a000199c6ad",
+            "desc": "电话",
+            "example": "",
+            "name": "phone",
+            "required": "1"
+          },
+          {
+            "_id": "63749d05bfa05a000199c6ac",
+            "desc": "地址",
+            "example": "",
+            "name": "address",
+            "required": "1"
+          }
+        ],
+        "query_path": {
+          "path": "/system/customer/list",
+          "params": []
+        },
+        "type": "static",
+        "status": "undone",
+        "edit_uid": 0
+      },
+      {
+        "_id": 14762,
+        "method": "POST",
+        "catid": 5137,
+        "title": "新增设备",
+        "path": "/system/device/add",
+        "project_id": 1577,
+        "res_body_type": "json",
+        "uid": 810,
+        "add_time": 1668581943,
+        "up_time": 1668581943,
+        "__v": 0,
+        "tag": [],
+        "index": 9,
+        "api_opened": false,
+        "res_body_is_json_schema": false,
+        "req_body_form": [],
+        "req_body_is_json_schema": false,
+        "req_params": [],
+        "req_headers": [],
+        "req_query": [],
+        "query_path": {
+          "path": "/system/device/add",
+          "params": []
+        },
+        "type": "static",
+        "status": "undone",
+        "edit_uid": 0
+      },
+      {
+        "_id": 14769,
+        "method": "POST",
+        "catid": 5137,
+        "title": "删除设备",
+        "path": "/system/device/delete",
+        "project_id": 1577,
+        "res_body_type": "json",
+        "uid": 810,
+        "add_time": 1668583254,
+        "up_time": 1668583254,
+        "__v": 0,
+        "tag": [],
+        "index": 10,
+        "api_opened": false,
+        "res_body_is_json_schema": false,
+        "req_body_form": [],
+        "req_body_is_json_schema": false,
+        "req_params": [],
+        "req_headers": [],
+        "req_query": [],
+        "query_path": {
+          "path": "/system/device/delete",
+          "params": []
+        },
+        "type": "static",
+        "status": "undone",
+        "edit_uid": 0
+      },
+      {
+        "_id": 14763,
+        "method": "GET",
+        "catid": 5137,
+        "title": "新增设备（批量导入）",
+        "path": "/system/device/import",
+        "project_id": 1577,
+        "res_body_type": "json",
+        "uid": 810,
+        "add_time": 1668582001,
+        "up_time": 1668582001,
+        "__v": 0,
+        "tag": [],
+        "index": 11,
+        "api_opened": false,
+        "res_body_is_json_schema": false,
+        "req_body_form": [],
+        "req_body_is_json_schema": false,
+        "req_params": [],
+        "req_headers": [],
+        "req_query": [],
+        "query_path": {
+          "path": "/system/device/import",
+          "params": []
+        },
+        "type": "static",
+        "status": "undone",
+        "edit_uid": 0
+      },
+      {
+        "_id": 14764,
+        "method": "POST",
+        "catid": 5137,
+        "title": "查询设备（分页）",
+        "path": "/system/device/list",
+        "project_id": 1577,
+        "res_body_type": "json",
+        "uid": 810,
+        "add_time": 1668582046,
+        "up_time": 1668582046,
+        "__v": 0,
+        "tag": [],
+        "index": 12,
+        "api_opened": false,
+        "res_body_is_json_schema": false,
+        "req_body_form": [],
+        "req_body_is_json_schema": false,
+        "req_params": [],
+        "req_headers": [],
+        "req_query": [],
+        "query_path": {
+          "path": "/system/device/list",
+          "params": []
+        },
+        "type": "static",
+        "status": "undone",
+        "edit_uid": 0
+      },
+      {
+        "_id": 14767,
+        "method": "POST",
+        "catid": 5137,
+        "title": "修改设备",
+        "path": "/system/device/modify",
+        "project_id": 1577,
+        "res_body_type": "json",
+        "uid": 810,
+        "add_time": 1668583229,
+        "up_time": 1668583229,
+        "__v": 0,
+        "tag": [],
+        "index": 13,
+        "api_opened": false,
+        "res_body_is_json_schema": false,
+        "req_body_form": [],
+        "req_body_is_json_schema": false,
+        "req_params": [],
+        "req_headers": [],
+        "req_query": [],
+        "query_path": {
+          "path": "/system/device/modify",
+          "params": []
+        },
+        "type": "static",
+        "status": "undone",
+        "edit_uid": 0
+      }
+    ]
+  },
+  {
+    "name": "测试",
+    "desc": null,
+    "add_time": 1668575832,
+    "up_time": 1668575832,
+    "index": 0,
+    "list": [
+      {
+        "_id": 14759,
+        "method": "POST",
+        "catid": 5143,
+        "title": "获取设备列表",
+        "path": "/device",
+        "project_id": 1577,
+        "res_body_type": "json",
+        "uid": 341,
+        "add_time": 1668575854,
+        "up_time": 1668592260,
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "res_body": "{\"type\":\"object\",\"title\":\"empty object\",\"properties\":{\"code\":{\"type\":\"number\"},\"data\":{\"type\":\"object\",\"properties\":{\"rows\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"deviceSN\":{\"type\":\"string\",\"description\":\"设备序列号\"}},\"required\":[\"deviceSN\"]}},\"total\":{\"type\":\"number\"}},\"required\":[\"rows\",\"total\"]}},\"required\":[\"code\",\"data\"]}",
+        "req_body_other": "{\"type\":\"object\",\"title\":\"empty object\",\"properties\":{\"deviceSN\":{\"type\":\"string\",\"description\":\"设备号\"},\"id\":{\"type\":\"string\"}},\"required\":[\"id\"]}",
+        "req_body_type": "json",
+        "tag": [],
+        "index": 0,
+        "api_opened": false,
+        "res_body_is_json_schema": true,
+        "req_body_form": [],
+        "req_body_is_json_schema": true,
+        "req_params": [],
+        "req_headers": [
+          {
+            "_id": "6374b284bfa05a000199c6b7",
+            "value": "application/json",
+            "name": "Content-Type",
+            "required": "1"
+          }
+        ],
+        "req_query": [
+          {
+            "_id": "6374b284bfa05a000199c6b6",
+            "desc": "页数",
+            "name": "page",
+            "required": "0"
+          },
+          {
+            "_id": "6374b284bfa05a000199c6b5",
+            "desc": "条数",
+            "example": "",
+            "name": "pageSize",
+            "required": "1"
+          }
+        ],
+        "query_path": {
+          "path": "/device",
+          "params": []
+        },
+        "type": "static",
+        "status": "undone",
+        "edit_uid": 0
+      }
+    ]
+  }
+]
